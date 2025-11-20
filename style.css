@@ -1,4 +1,3 @@
-/* ALAP GRID-ELRENDEZÉS */
 .grid-layout{
 display: grid;
 grid-template-areas:
@@ -6,65 +5,106 @@ grid-template-areas:
 "aside content"
 "footer footer";
 grid-template-columns: 1fr 2fr;
-gap: 3px;
-background-color: rgb(88, 139, 190);
-padding: 5px;
+gap: 15px;
+background: linear-gradient(to right, #6fb1fc, #4364f7);
+padding: 20px;
 max-width: 1500px;
+margin: 0 auto;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
+/* DOBOZOK */
 .box{
-background: rgb(31, 87, 112);
-border-radius: 10px;
+background: rgba(255,255,255,0.1);
+border-radius: 20px;
+padding: 25px;
+color: #fff;
+box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.box:hover {
+transform: translateY(-5px);
+box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 
 
 .header{
 grid-area: header;
-background: rgb(85, 75, 139);
+text-align: center;
+font-size: 2.5rem;
+font-weight: bold;
+letter-spacing: 1px;
+background: rgba(255,255,255,0.15);
 }
 
 
 .aside{
 grid-area: aside;
+font-size: 1.1rem;
+line-height: 1.7;
 }
 
 
 .content{
 grid-area: content;
-background-color: rgb(59, 87, 139);
+background: rgba(255,255,255,0.1);
+font-size: 1.15rem;
+line-height: 1.8;
 }
 
 
 .footer{
 grid-area: footer;
 text-align: center;
+font-size: 1.2rem;
+background: rgba(0,0,0,0.2);
+border-radius: 15px;
 }
 
 
-@media (min-width: 600px) {
-.header {grid-area: 1 / span 6;}
-.menu {grid-area: 2 / span 1;}
-.content {grid-area: 2 / span 4;}
-.facts {grid-area: 2 / span 1;}
-.footer {grid-area: 3 / span 6;}
-}
-
-
-/* DELFINEK KÉP STÍLUS */
+/* DELFINEK KÉP */
 img.delfin {
 width: 100%;
-max-width: 800px;
+max-width: 900px;
 height: auto;
 display: block;
 object-fit: cover;
-border-radius: 10px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-transition: transform 0.25s ease, box-shadow 0.25s ease;
+border-radius: 20px;
+box-shadow: 0 15px 45px rgba(0,0,0,0.5);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+margin-top: 20px;
 }
 
 
 img.delfin:hover {
-transform: scale(1.02);
-box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+transform: scale(1.05);
+box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+cursor: pointer;
+}
+
+
+ul li {
+margin-bottom: 12px;
+line-height: 1.8;
+padding-left: 8px;
+}
+
+
+p {
+margin-bottom: 15px;
+}
+
+
+@media (max-width: 900px) {
+.grid-layout {
+grid-template-columns: 1fr;
+grid-template-areas:
+"header"
+"aside"
+"content"
+"footer";
+}
 }
